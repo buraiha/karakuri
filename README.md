@@ -7,6 +7,7 @@ iPhoneで音声入力した文章をPCのブラウザへ送り、コピーして
 
 AIの作業入口は [AGENTS.md](AGENTS.md)、プロジェクト固有情報は [.ai/project.md](.ai/project.md)。
 要件の正本は [docs/requirements.md](docs/requirements.md)。
+画面遷移と管理・データの基本構成は [docs/design.md](docs/design.md)。
 
 ## ハーネス導入記録
 
