@@ -1,0 +1,7 @@
+FROM docker.io/library/python:3.14-slim
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential pkg-config default-libmysqlclient-dev && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY requirements.lock requirements-mysql.lock ./
+RUN pip install --no-cache-dir -r requirements-mysql.lock
+# Source is mounted read-only; local .env/.secrets are not included in the image.
+CMD ["python", "manage.py", "test", "core", "--noinput"]

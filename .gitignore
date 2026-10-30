@@ -1,2 +1,19 @@
-# macOS metadata
+# Local environment and credentials
 .DS_Store
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.coverage
+htmlcov/
+staticfiles/
+
+# Local OAuth credential backup
+.secrets/
+
+# Database files, journals, and local backups
+.data/
+*.sqlite3
+*.sqlite3-*

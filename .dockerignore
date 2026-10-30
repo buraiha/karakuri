@@ -1,0 +1,4 @@
+*
+!Dockerfile.mysql-test
+!requirements.lock
+!requirements-mysql.lock

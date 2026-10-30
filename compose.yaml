@@ -1,0 +1,27 @@
+services:
+  db:
+    image: docker.io/library/postgres:17
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-karakuri}
+      POSTGRES_USER: ${POSTGRES_USER:-karakuri}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-}
+    ports:
+      - "127.0.0.1:55434:5432"
+    volumes:
+      - karakuri_pgdata:/var/lib/postgresql/data
+  mysql:
+    profiles: [mysql]
+    image: docker.io/library/mysql:8.4
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-karakuri}
+      MYSQL_USER: ${MYSQL_USER:-karakuri}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-}
+    ports:
+      - "127.0.0.1:53306:3306"
+    volumes:
+      - karakuri_mysqldata:/var/lib/mysql
+
+volumes:
+  karakuri_pgdata:
+  karakuri_mysqldata:
